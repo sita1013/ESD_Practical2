@@ -14,5 +14,13 @@ class City(models.Model):
     pop = models.IntegerField()
     city_id = models.TextField()
 
+    def cities():
+        cities = City.objects.all()
+        return cities
+    
+    def city_by_name(city):
+        city_list = City.objects.filter(city=city)
+        return city_list
+
     def __str__(self):
         return f'{self.id}, {self.city}, {self.otherName}, {self.country}, {self.latitude},{self.longitude}, {self.year}, {self.pop}, {self.city_id}'
